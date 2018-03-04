@@ -1,7 +1,9 @@
 <template>
   <div id="app">
       <app-header></app-header>
-      <router-view/>
+      <transition name="slide-fade" mode="out-in">
+          <router-view/>
+      </transition>
   </div>
 </template>
 
@@ -23,5 +25,24 @@ export default {
     }
     #app {
         padding: 0;
+    }
+
+    .slide-fade-enter {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .slide-fade-enter-active {
+        transition: all 0.35s ease-out;
+    }
+
+    .slide-fade-leave {
+
+    }
+
+    .slide-fade-leave-active {
+        transition: all 0.35s ease-out;
+        opacity: 0;
+        transform: translateY(20px);
     }
 </style>
