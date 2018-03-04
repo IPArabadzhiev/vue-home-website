@@ -1,15 +1,23 @@
 <template>
-    <ul class="navigation-list">
-        <router-link v-for="navigationItem in navigationItems" :to="{ name: navigationItem.name }" :key="navigationItem.name">
-            <li class="navigation-list-item">{{ navigationItem.value }}</li>
+    <div class="navigation-list-wrapper">
+        <router-link :to="{name: 'home'}">
+            <transition name="fade-fast">
+                <img :src="logo" :key="logo" @mouseover="isLogoHovered = true" @mouseout="isLogoHovered = false">
+            </transition>
         </router-link>
-    </ul>
+        <ul class="navigation-list container">
+            <router-link v-for="navigationItem in navigationItems" :to="{ name: navigationItem.name }" :key="navigationItem.name">
+                <li class="navigation-list-item">{{ navigationItem.value }}</li>
+            </router-link>
+        </ul>
+    </div>
 </template>
 
 <script>
     export default {
         data () {
             return {
+                isLogoHovered: false,
                 navigationItems: [
                     {
                          value: 'Home',
@@ -20,23 +28,60 @@
                          name: 'about'
                     },
                     {
+                         value: 'Gallery',
+                         name: 'gallery'
+                    },
+                    {
+                         value: 'Prices',
+                         name: 'prices'
+                    },
+                    {
                          value: 'Contact us',
                          name: 'contacts'
-                    },
+                    }
                 ]
+            }
+        },
+        computed: {
+            logo() {
+                return require(this.isLogoHovered ? '@/assets/logo-en-blue-swap.png' : '@/assets/logo-en-blue.png');
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
+    .navigation-list-wrapper {
+        position: relative;
+        background-color: rgba($color-light-blue-lighten-5, 0.4);
+        height: 100px;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+
+        > a {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            height: 80%;
+
+            @media (max-width: 1366px) {
+                left: 20px;
+            }
+
+            img {
+                position: absolute;
+                max-height: 100%;
+                transform: translate3d(0, -50%, 0);
+            }
+        }
+    }
     .navigation-list {
         display: flex;
-        background-color: $color-light-blue-lighten-5;
-        margin: 0;
         flex-wrap: nowrap;
         justify-content: center;
         list-style-type: none;
+        margin: auto;
 
         a {
             margin: 10px;
@@ -48,15 +93,16 @@
             color: $color-light-blue-darken-2;
             transition: border-color 0.4s ease-out, color 0.2s ease-out;
             font-weight: bold;
-
-            &:hover,
-            &:active {
-                border-left-color: $color-light-blue-darken-4;
-                border-right-color: $color-light-blue-darken-4;
-                border-top-color: $color-light-blue-lighten-5;
-                border-bottom-color: $color-light-blue-lighten-5;
-                color: $color-light-blue-darken-4;
-            }
         }
+    }
+
+    .navigation-list .router-link-exact-active,
+    .navigation-list a:hover,
+    .navigation-list a:active, {
+        border-left-color: $color-light-blue-darken-4;
+        border-right-color: $color-light-blue-darken-4;
+        border-top-color: $color-light-blue-lighten-5;
+        border-bottom-color: $color-light-blue-lighten-5;
+        color: $color-light-blue-darken-4;
     }
 </style>
