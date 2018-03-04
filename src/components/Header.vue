@@ -91,8 +91,12 @@
             border-left-color: $color-light-blue-lighten-5;
             border-right-color: $color-light-blue-lighten-5;
             color: $color-light-blue-darken-2;
-            transition: border-color 0.4s ease-out, color 0.2s ease-out;
+            transition: all 0.4s ease-out, color 0.2s ease-out;
             font-weight: bold;
+
+            &:not(.router-link-exact-active):hover {
+                transform: translateX(-10px);
+            }
         }
     }
 
