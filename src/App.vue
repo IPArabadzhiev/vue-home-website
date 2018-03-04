@@ -22,6 +22,7 @@ export default {
     body {
         padding: 0;
         margin: 0;
+        font-family: 'Philosopher', sans-serif;
     }
     #app {
         padding: 0;
