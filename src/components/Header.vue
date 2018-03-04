@@ -96,13 +96,13 @@
 
             &:not(.router-link-exact-active):hover {
                 transform: translateX(-10px);
+                border-top-color: $color-light-blue-darken-4;
+                border-bottom-color: $color-light-blue-darken-4;
             }
         }
     }
 
-    .navigation-list .router-link-exact-active,
-    .navigation-list a:hover,
-    .navigation-list a:active, {
+    .navigation-list .router-link-exact-active {
         border-left-color: $color-light-blue-darken-4;
         border-right-color: $color-light-blue-darken-4;
         border-top-color: $color-light-blue-lighten-5;
