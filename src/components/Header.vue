@@ -1,7 +1,7 @@
 <template>
     <ul class="navigation-list">
-        <router-link v-for="navigationItem in navigationItems" :to="navigationItem.name | hyphenate">
-            <li class="navigation-list-item">{{ navigationItem.name }}</li>
+        <router-link v-for="navigationItem in navigationItems" :to="{ name: navigationItem.name }">
+            <li class="navigation-list-item">{{ navigationItem.value }}</li>
         </router-link>
     </ul>
 </template>
@@ -12,13 +12,16 @@
             return {
                 navigationItems: [
                     {
-                         name: 'Home'
+                         value: 'Home',
+                         name: 'home'
                     },
                     {
-                         name: 'About us'
+                         value: 'About us',
+                         name: 'about'
                     },
                     {
-                         name: 'Contact us'
+                         value: 'Contact us',
+                         name: 'contacts'
                     },
                 ]
             }
