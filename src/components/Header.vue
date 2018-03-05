@@ -20,23 +20,23 @@
                 isLogoHovered: false,
                 navigationItems: [
                     {
-                         value: 'Home',
+                         value: 'Начало',
                          name: 'home'
                     },
                     {
-                         value: 'About us',
+                         value: 'За нас',
                          name: 'about'
                     },
                     {
-                         value: 'Gallery',
+                         value: 'Галерия',
                          name: 'gallery'
                     },
                     {
-                         value: 'Prices',
+                         value: 'Цени',
                          name: 'prices'
                     },
                     {
-                         value: 'Contact us',
+                         value: 'Контакти',
                          name: 'contacts'
                     }
                 ]
@@ -44,7 +44,7 @@
         },
         computed: {
             logo() {
-                return require(this.isLogoHovered ? '@/assets/logo-en-blue-swap.png' : '@/assets/logo-en-blue.png');
+                return require(this.isLogoHovered ? '@/assets/logo-bg-blue-swap.png' : '@/assets/logo-bg-blue.png');
             }
         }
     }

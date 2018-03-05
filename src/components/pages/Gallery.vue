@@ -1,16 +1,22 @@
 <template>
     <div>
-        <p>{{ msg }}</p>
+        <app-gallery></app-gallery>
     </div>
 </template>
 
 <script>
+import Gallery from '@/components/shared/Gallery.vue';
+
 export default {
-  name: 'Home',
-  data () {
-    return {
-        msg: 'Home | Gallery'
+
+    name: 'Gallery',
+    components: {
+        appGallery: Gallery
+    },
+    data () {
+        return {
+            msg: 'Home | Gallery'
+        }
     }
-  }
 }
 </script>

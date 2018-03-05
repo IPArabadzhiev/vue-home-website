@@ -26,6 +26,7 @@ export default {
         margin: 0;
         font-family: 'Philosopher', sans-serif;
         color: $color-light-blue-darken-4;
+        min-height: 100vh;
     }
     #app {
         padding: 0;
