@@ -1,11 +1,11 @@
 <template>
   <div id="app">
       <app-header></app-header>
-      <transition name="slide-fade" mode="out-in">
-          <div class="container">
+      <div class="container">
+          <transition name="slide-up-fade" mode="out-in">
               <router-view/>
-          </div>
-      </transition>
+          </transition>
+      </div>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
     .container {
         width: 60%;
         margin: auto;
-        
+
         @media (max-width: 1366px) {
             width: 80%;
         }
@@ -42,24 +42,44 @@ export default {
 
     // transitions
 
-    // slide-fade
-    .slide-fade-enter {
+    // slide-up-fade
+    .slide-up-fade-enter {
         opacity: 0;
         transform: translateY(20px);
     }
 
-    .slide-fade-enter-active {
+    .slide-up-fade-enter-active {
         transition: all 0.35s ease-out;
     }
 
-    .slide-fade-leave {
+    .slide-up-fade-leave {
 
     }
 
-    .slide-fade-leave-active {
+    .slide-up-fade-leave-active {
         transition: all 0.35s ease-out;
         opacity: 0;
         transform: translateY(20px);
+    }
+
+    // slide-right-fade
+    .slide-up-fade-enter {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    .slide-up-fade-enter-active {
+        transition: all 0.35s ease-out;
+    }
+
+    .slide-up-fade-leave {
+
+    }
+
+    .slide-up-fade-leave-active {
+        transition: all 0.35s ease-out;
+        opacity: 0;
+        transform: translateX(20px);
     }
 
     // fade
