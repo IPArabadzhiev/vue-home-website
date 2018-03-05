@@ -3,7 +3,8 @@
         <transition
             appear
             appear-class="gallery-thumb-appear"
-            v-for="image in images">
+            v-for="image in images"
+            :key="image">
             <div
                 :style="{ backgroundImage: `url('${image}')` }"
                 class="gallery-thumb">
