@@ -6,12 +6,13 @@ import Contacts from '@/components/pages/Contacts'
 import Prices from '@/components/pages/Prices'
 import Gallery from '@/components/pages/Gallery'
 
-Vue.use(Router)
+Vue.use(Router);
 
 /*
-    Router global configuraions
+    Router global configurations
 */
-export default new Router({
+
+const router = new Router({
     mode: 'history',
     routes: [
         {
@@ -45,4 +46,6 @@ export default new Router({
             component: Gallery
         }
     ]
-})
+});
+
+export default router;

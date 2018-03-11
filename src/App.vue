@@ -1,23 +1,25 @@
 <template>
-  <div id="app">
-      <app-header></app-header>
-      <div class="container">
-          <transition name="slide-up-fade" mode="out-in">
-              <router-view/>
-          </transition>
-      </div>
-  </div>
+    <div id="app">
+        <app-header></app-header>
+        <div class="container">
+            <transition name="slide-up-fade" mode="out-in">
+                <keep-alive>
+                    <router-view/>
+                </keep-alive>
+            </transition>
+        </div>
+    </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+    import Header from "./components/Header.vue";
 
-export default {
-    name: 'App',
-    components: {
-        appHeader: Header
+    export default {
+        name: 'App',
+        components: {
+            appHeader: Header
+        }
     }
-}
 </script>
 
 <style lang="scss">
@@ -27,6 +29,7 @@ export default {
         font-family: 'Philosopher', sans-serif;
         color: $color-light-blue-darken-4;
     }
+
     #app {
         padding: 0;
     }

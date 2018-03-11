@@ -1,16 +1,28 @@
 <template>
     <div>
+        <p>{{ txt.message }}</p>
         <p>{{ msg }}</p>
+        <p @click="callApi()">{{ msg }}</p>
     </div>
 </template>
 
 <script>
-export default {
-  name: 'Home',
-  data () {
-    return {
-        msg: 'Home | Home'
+    import pageMixins from '@/mixins/pageMixins';
+
+    export default {
+        data() {
+            return {
+                package: 'home',
+                msg: 'Home | Home'
+            }
+        },
+        methods: {
+            callApi() {
+                this.$http.get('/api').then(response => {
+                    this.msg = response;
+                })
+            }
+        },
+        mixins: [pageMixins]
     }
-  }
-}
 </script>

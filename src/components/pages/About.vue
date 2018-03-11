@@ -1,18 +1,19 @@
 <template>
-    <div class="container">
-        <p>{{ msg }}</p>
-    </div>
+    <p>{{ msg }}</p>
 </template>
 
 <script>
-export default {
-  name: 'About',
-  data () {
-    return {
-        msg: 'Home | About'
+    import pageMixins from '@/mixins/pageMixins';
+
+    export default {
+        data() {
+            return {
+                package: 'about',
+                msg: 'Home | About'
+            }
+        },
+        mixins: [pageMixins]
     }
-  }
-}
 </script>
 
 <style scoped>

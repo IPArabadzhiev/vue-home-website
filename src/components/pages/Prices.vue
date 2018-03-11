@@ -5,14 +5,17 @@
 </template>
 
 <script>
-export default {
-  name: 'About',
-  data () {
-    return {
-        msg: 'Home | Prices'
+    import pageMixins from '@/mixins/pageMixins';
+
+    export default {
+        data() {
+            return {
+                package: 'prices',
+                msg: 'Home | Prices'
+            }
+        },
+        mixins: [pageMixins]
     }
-  }
-}
 </script>
 
 <style scoped>
