@@ -14,9 +14,12 @@
 </template>
 
 <script>
+    import pageMixins from '@/mixins/pageMixins';
+
     export default {
         data () {
             return {
+                package: 'navigation',
                 isLogoHovered: false,
                 navigationItems: [
                     {
@@ -42,11 +45,14 @@
                 ]
             }
         },
+
         computed: {
             logo() {
                 return require(this.isLogoHovered ? '@/assets/logo-bg-blue-swap.png' : '@/assets/logo-bg-blue.png');
             }
-        }
+        },
+
+        mixins: [pageMixins]
     }
 </script>
 
